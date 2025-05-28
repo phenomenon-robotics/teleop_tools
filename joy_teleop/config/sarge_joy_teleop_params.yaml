@@ -1,0 +1,51 @@
+joy_teleop:
+  ros__parameters:
+
+    move:
+      type: topic
+      interface_type: geometry_msgs/msg/TwistStamped
+      topic_name: /diffbot_base_controller/cmd_vel
+      deadman_buttons: [4]
+      axis_mappings:
+        twist-linear-x:
+          axis: 4
+          scale: -0.5
+          offset: -0.03
+        twist-angular-z:
+          axis: 0
+          scale: -0.5
+          offset: 0
+        
+    start_collector_forward:
+      type: service
+      interface_type: hen_collector_control_interfaces/srv/StartCollector
+      service_name: /hen_collector_control/start_collector
+      service_request:
+        direction: 1
+      buttons: [3]
+
+    start_collector_reverse:
+      type: service
+      interface_type: hen_collector_control_interfaces/srv/StartCollector
+      service_name: /hen_collector_control/start_collector
+      service_request:
+        direction: 2
+      buttons: [1]
+
+    stop_collector:
+      type: service
+      interface_type: std_srvs/srv/Trigger
+      service_name: /hen_collector_control/stop_collector
+      buttons: [12]
+
+    drop_collector:
+      type: service
+      interface_type: std_srvs/srv/Trigger
+      service_name: /hen_collector_control/drop_collector
+      buttons: [0]
+
+    raise_collector:
+      type: service
+      interface_type: std_srvs/srv/Trigger
+      service_name: /hen_collector_control/raise_collector
+      buttons: [2]
