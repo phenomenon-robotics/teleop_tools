@@ -1,3 +1,4 @@
+#Configuración para cmd_vel con Twist Stamped
 joy_teleop:
   ros__parameters:
 
@@ -20,3 +21,29 @@ joy_teleop:
 
         header-frame_id:
           value: "base_link"
+
+#Configuración para cmd_vel con Twist
+# joy_teleop:
+#   ros__parameters:
+
+#     walk:
+#       type: topic
+#       interface_type: geometry_msgs/msg/Twist
+#       topic_name: cmd_vel
+#       deadman_buttons: [5]
+#       axis_mappings:
+#         linear-x:
+#           axis: 1
+#           scale: 0.5
+#           offset: -0.03
+#         angular-z:
+#           axis: 0
+#           scale: 0.5
+#           offset: 0
+#         linear-y:
+#           axis: 2
+#           scale: 0.3
+#           offset: 0
+#         linear-z:
+#           button: 2
+#           scale: 3.0
