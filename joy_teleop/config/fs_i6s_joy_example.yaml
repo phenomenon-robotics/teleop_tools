@@ -6,7 +6,7 @@ joy_teleop:
       type: topic
       interface_type: geometry_msgs/msg/TwistStamped
       topic_name: cmd_vel
-      deadman_buttons: [5]
+      deadman_buttons: [7]
 
       axis_mappings:
         twist-linear-x:
